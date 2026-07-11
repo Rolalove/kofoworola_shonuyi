@@ -59,9 +59,9 @@ export default function Hero() {
             {/* Description */}
             <p className="text-zinc-400 text-[15px] font-sans max-w-[480px] mb-10 leading-[1.7]">
               I craft high-performance web systems and cross-platform mobile
-              apps that feel as good as they perform a scientist&apos;s
-              precision meeting a designer&apos;s obsession with what actually
-              matters.
+              apps that feel as good as they perform, combining a
+              scientist&apos;s precision with a designer&apos;s obsession with
+              what actually matters.
             </p>
 
             {/* Action Buttons */}

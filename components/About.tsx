@@ -22,7 +22,7 @@ export default function About() {
               <p className="text-zinc-400 text-base font-sans leading-7">
                 My journey into engineering began not in a computer lab, but a
                 chemistry classroom. A background in{" "}
-                <span className="text-zinc-300">Chemistry Education</span> gave
+                <span className="text-zinc-300">Chemistry Education </span> gave
                 me a scientist&apos;s rigour, a love of systems, precision, and
                 understanding exactly why things behave the way they do.
               </p>

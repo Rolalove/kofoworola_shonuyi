@@ -42,6 +42,31 @@ export const MAIN_PROJECTS: ProjectData[] = [
   },
   {
     number: "02",
+    category: "Education Management System",
+    title: "Dee Unique International School",
+    description:
+      "Serving as a digital hub for a world-class learning institution spanning from Nursery to Secondary education. The site emphasizes a balance between high academic achievement and robust character development.",
+    tags: ["Next.js", "TypeScript"],
+    links: [
+      {
+        label: "View project",
+        href: "https://dee-unique.vercel.app/",
+        icon: <ArrowUpRight className="w-3.5 h-3.5" />,
+      },
+      {
+        label: "View walkthrough",
+        href: "#",
+        icon: <ExternalLink className="w-3 h-3" />,
+      },
+    ],
+    mockup: {
+      url: "https://dee-unique.vercel.app/",
+      imageSrc: "/dee-unique.png",
+      alt: "Dee Unique International School",
+    },
+  },
+  {
+    number: "03",
     category: "E-Commerce",
     title: "Joy Fashion Island",
     description:
@@ -66,31 +91,6 @@ export const MAIN_PROJECTS: ProjectData[] = [
     },
     reversed: true,
   },
-  {
-    number: "03",
-    category: "Education Management System",
-    title: "Dee Unique International School",
-    description:
-      "Serving as a digital hub for a world-class learning institution spanning from Nursery to Secondary education. The site emphasizes a balance between high academic achievement and robust character development.",
-    tags: ["Next.js", "TypeScript"],
-    links: [
-      {
-        label: "View project",
-        href: "https://dee-unique.vercel.app/",
-        icon: <ArrowUpRight className="w-3.5 h-3.5" />,
-      },
-      {
-        label: "View walkthrough",
-        href: "#",
-        icon: <ExternalLink className="w-3 h-3" />,
-      },
-    ],
-    mockup: {
-      url: "https://dee-unique.vercel.app/",
-      imageSrc: "/dee-unique.png",
-      alt: "Dee Unique International School",
-    },
-  },
 ];
 
 export const MINOR_PROJECTS = [
@@ -99,7 +99,7 @@ export const MINOR_PROJECTS = [
     category: "FinTech",
     description: "Escrow platform for freelancer",
     tags: ["Next.js", "NextAuth", "Prisma"],
-    href: "#",
+    href: "https://payflex.vercel.app/login",
     imageSrc: "/devtrackit.png",
   },
 
