@@ -13,7 +13,11 @@ export default function Navbar() {
     { label: "About", id: "about" },
     { label: "Work", id: "work" },
     { label: "Contact", id: "contact" },
-    { label: "Résumé", id: "resume" },
+    {
+      label: "Résumé",
+      id: "resume",
+      href: "/resume",
+    },
   ];
 
   // Track scrolling to add backdrop blur and highlight correct section
@@ -96,24 +100,31 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => handleNavClick(e, item.id)}
-              aria-current={activeSection === item.id ? "page" : undefined}
-              className={`text-sm tracking-wide font-sans transition-colors relative py-1 hover:text-white ${
-                activeSection === item.id
-                  ? "text-accent font-medium"
-                  : "text-zinc-400"
-              }`}
-            >
-              {item.label}
-              {activeSection === item.id && (
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent rounded-full animate-fade-in" />
-              )}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isExternal = !!item.href;
+            return (
+              <Link
+                key={item.id}
+                href={item.href || `#${item.id}`}
+                onClick={
+                  isExternal ? undefined : (e) => handleNavClick(e, item.id)
+                }
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                aria-current={activeSection === item.id ? "page" : undefined}
+                className={`text-sm tracking-wide font-sans transition-colors relative py-1 hover:text-white ${
+                  activeSection === item.id
+                    ? "text-accent font-medium"
+                    : "text-zinc-400"
+                }`}
+              >
+                {item.label}
+                {activeSection === item.id && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent rounded-full animate-fade-in" />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Toggle Button */}
@@ -134,21 +145,30 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-4 px-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => handleNavClick(e, item.id)}
-              aria-current={activeSection === item.id ? "page" : undefined}
-              className={`text-base font-sans py-2 border-b border-zinc-900/40 last:border-0 ${
-                activeSection === item.id
-                  ? "text-accent font-medium"
-                  : "text-zinc-400"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isExternal = !!item.href;
+            return (
+              <Link
+                key={item.id}
+                href={item.href || `#${item.id}`}
+                onClick={
+                  isExternal
+                    ? () => setIsOpen(false)
+                    : (e) => handleNavClick(e, item.id)
+                }
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                aria-current={activeSection === item.id ? "page" : undefined}
+                className={`text-base font-sans py-2 border-b border-zinc-900/40 last:border-0 ${
+                  activeSection === item.id
+                    ? "text-accent font-medium"
+                    : "text-zinc-400"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>
